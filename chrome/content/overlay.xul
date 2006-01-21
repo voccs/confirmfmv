@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<overlay id="confirmfmv-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="bundle_confirmfmv"
+                  src="chrome://confirmfmv/locale/confirmfmv.properties" />
+  </stringbundleset>
+
+</overlay>

@@ -1,0 +1,6 @@
+content	confirmfmv	jar:chrome/confirmfmv.jar!/content/
+skin	confirmfmv	classic/1.0	jar:chrome/confirmfmv.jar!/skin/
+locale	confirmfmv	en-US	jar:chrome/confirmfmv.jar!/locale/en-US/
+
+overlay		chrome://messenger/content/messenger.xul	chrome://confirmfmv/content/overlay.xul
+override	chrome://messenger/content/messengerdnd.js	chrome://confirmfmv/content/messengerdnd.js

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>{c267db80-8a57-11da-a8d5-000a95be0946}</em:id>
+    <em:name>ConfirmFolderMove</em:name>
+    <em:version>0.1</em:version>
+    
+    <!-- Thunderbird -->
+    <em:targetApplication>
+      <Description>
+        <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
+        <em:minVersion>1.4.1</em:minVersion>
+        <em:maxVersion>1.5</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+    
+    <!-- The contents of the extension //-->
+    <em:file>
+      <Description about="urn:mozilla:extension:file:confirmfmv.jar">
+        <em:package>content/confirmfmv/</em:package>
+	<em:locale>locale/en-US/confirmfmv/</em:locale>
+        <em:skin>skin/classic/confirmfmv/</em:skin>
+      </Description>
+    </em:file>
+
+    <!-- Front End Integration Hooks (used by Extension Manager)-->
+    <em:description>Introduces a preference that allows users to be prompted before moving folders.</em:description>
+    <em:creator>Ryan Lee (ryan@ryanlee.org)</em:creator>
+    <em:iconURL>chrome://confirmfmv/skin/icon32x32.png</em:iconURL>
+    <em:homepageURL>http://ryanlee.org/software/mozilla/thunderbird/confirmfmv/</em:homepageURL>
+    <em:optionsURL>chrome://confirmfmv/content/options.xul</em:optionsURL>
+    <em:type parseType="Integer">2</em:type> <!-- type=extension -->
+  </Description>
+</RDF>
