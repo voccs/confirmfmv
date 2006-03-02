@@ -1,1 +1,53 @@
-<!-- options -->
+<?xml version="1.0"?>
+<!--
+   - Part of ConfirmFolderMove by Ryan Lee <ryan@ryanlee.org>
+   - Copyright (c) 2005-2006 Ryan Lee.
+   - See the license.txt included in this package for more information.
+   -->
+
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://confirmfmv/skin/options.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://confirmfmv/locale/options.dtd">
+
+<window id="confirmfmvOptionsWindow"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        windowtype="confirfmv:optionsWindow"
+        title="&confirmfmvOptions.title;"
+        onload="ConfirmfmvOptions.onLoad(event);"
+        onunload="ConfirmfmvOptions.onUnload(event);">
+
+  <script type="application/x-javascript"
+          src="chrome://global/content/globalOverlay.js"/>
+
+  <script type="application/x-javascript"
+          src="chrome://confirmfmv/content/options.js"/>
+
+  <commandset id="maincommands">
+    <command id="cmd_close" oncommand="window.close();"/>
+  </commandset>
+
+  <keyset id="mainkeys">
+    <key id="key_close" keycode="VK_ESCAPE" command="cmd_close"/>
+  </keyset>
+  <tabbox>
+    <tabs>
+      <tab id="optionsTab" label="&confirmfmvOptions.tab.label;"/>
+    </tabs>
+    <tabpanels id="confirmfmvOptions-tabPanel">
+      <vbox align="start">
+        <checkbox id="checkbox_confirmfmvSwitch"
+                  class="indent"
+                  label="&confirmfmvOptions.pref.label;" />
+      </vbox>
+    </tabpanels>
+  </tabbox>
+
+  <!-- Buttons -->
+  <hbox class="il-pad">
+    <button id="button-save" label="&save;" oncommand="ConfirmfmvOptions.save();"/>
+    <spacer flex="1"/>
+    <button id="button-close" label="&close;" command="cmd_close"/>
+  </hbox>
+
+</window>

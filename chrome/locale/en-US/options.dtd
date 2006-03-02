@@ -1,1 +1,6 @@
-<!-- options -->
+<!ENTITY confirmfmvOptions.title "ConfirmFolderMove Preferences">
+<!ENTITY confirmfmvOptions.tab.label "Preferences">
+<!ENTITY confirmfmvOptions.pref.label "Enable confirmation dialog on folder move via drag and drop (disable in case of extensive moving)">
+
+<!ENTITY save "Save Preferences">
+<!ENTITY close "Close">
