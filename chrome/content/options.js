@@ -32,7 +32,8 @@ ConfirmfmvOptions.save = function() {
     var checkbox_disable = document.getElementById("checkbox_confirmfmvDisableDialog");
 
     prefs.setBoolPref("folders.drag.confirm", checkbox.checked);
-    prefs.setBoolPref("folders.drag.disable-dialog", checkbox_disable.checked);
+    if (checkbox.checked)
+        prefs.setBoolPref("folders.drag.disable-dialog", checkbox_disable.checked);
 
     window.close();
 }
