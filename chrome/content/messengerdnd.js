@@ -345,7 +345,7 @@ function DropOnFolderTree(row, orientation)
         var confirmfmvBundle = document.getElementById("bundle_confirmfmv");
         var title = confirmfmvBundle.getString("confirmMoveFolderTitle");
         var text = confirmfmvBundle.getFormattedString("confirmMoveFolderText", [sourceFolder.name]);
-        if (disableDrag)
+        if (confirmFolderDrag && disableDrag)
             return false;
 
         // if the user says no, then just fall out
