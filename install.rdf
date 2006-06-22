@@ -6,7 +6,7 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>{c267db80-8a57-11da-a8d5-000a95be0946}</em:id>
     <em:name>ConfirmFolderMove</em:name>
-    <em:version>0.2</em:version>
+    <em:version>0.3</em:version>
     
     <!-- Thunderbird -->
     <em:targetApplication>
