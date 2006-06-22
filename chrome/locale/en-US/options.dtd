@@ -1,6 +1,7 @@
 <!ENTITY confirmfmvOptions.title "ConfirmFolderMove Preferences">
 <!ENTITY confirmfmvOptions.tab.label "Preferences">
-<!ENTITY confirmfmvOptions.pref.label "Enable confirmation dialog on folder move via drag and drop (disable in case of extensive moving)">
+<!ENTITY confirmfmvOptions.pref.label "Enable this extension (disable if extensive folder reorganizing is planned)">
+<!ENTITY confirmfmvOptions.pref_disable.label "Turn off all confirmation dialogs (always cancel every folder move)">
 
 <!ENTITY save "Save Preferences">
 <!ENTITY close "Close">

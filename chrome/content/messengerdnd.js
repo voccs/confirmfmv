@@ -341,9 +341,12 @@ function DropOnFolderTree(row, orientation)
         var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
         var confirmFolderDrag = prefs.getBoolPref("folders.drag.confirm");
         var promptService = Components.classes["@mozilla.org/embedcomp/prompt-service;1"].getService(Components.interfaces.nsIPromptService);
+        var disableDrag = prefs.getBoolPref("folders.drag.disable-dialog");
         var confirmfmvBundle = document.getElementById("bundle_confirmfmv");
         var title = confirmfmvBundle.getString("confirmMoveFolderTitle");
         var text = confirmfmvBundle.getFormattedString("confirmMoveFolderText", [sourceFolder.name]);
+        if (disableDrag)
+            return false;
 
         // if the user says no, then just fall out
         if (confirmFolderDrag) {
