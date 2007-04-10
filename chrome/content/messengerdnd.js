@@ -118,7 +118,7 @@ function CanDropOnFolderTree(index, orientation)
                 debugDump("***canFileMessages == false\n");
                 return false;
             }
-            var hdr = messenger.messageServiceFromURI(sourceUri).messageURIToMsgHdr(sourceUri);
+            var hdr = messenger.msgHdrFromURI(sourceUri);
             if (hdr.folder == targetFolder)
                 return false;
             break;
@@ -290,7 +290,7 @@ function DropOnFolderTree(row, orientation)
         if (dropMessage) {
             // from the message uri, get the appropriate messenger service
             // and then from that service, get the msgDbHdr
-            list.AppendElement(messenger.messageServiceFromURI(sourceUri).messageURIToMsgHdr(sourceUri));
+            list.AppendElement(messenger.msgHdrFromURI(sourceUri));
         }
         else {
             // Prevent dropping of a node before, after, or on itself
@@ -318,12 +318,12 @@ function DropOnFolderTree(row, orientation)
                 // news to pop or imap is always a copy
                 messenger.CopyMessages(GetFolderDatasource(), sourceResource, targetResource, list, false);
             }
-            else {
-                var dragAction = dragSession.dragAction;
-                if (dragAction == nsIDragService.DRAGDROP_ACTION_COPY)
-                    messenger.CopyMessages(GetFolderDatasource(), sourceResource, targetResource, list, false);
-                else if (dragAction == nsIDragService.DRAGDROP_ACTION_MOVE)
-                    messenger.CopyMessages(GetFolderDatasource(), sourceResource, targetResource, list, true);
+            else if (dragSession.dragAction == nsIDragService.DRAGDROP_ACTION_COPY ||
+                     dragSession.dragAction == nsIDragService.DRAGDROP_ACTION_MOVE) {
+                var isMove = (dragSession.dragAction == nsIDragService.DRAGDROP_ACTION_MOVE);
+                pref.setCharPref("mail.last_msg_movecopy_target_uri", targetFolder.URI);
+                pref.setBoolPref("mail.last_msg_movecopy_was_move", isMove);  
+                messenger.CopyMessages(GetFolderDatasource(), sourceResource, targetResource, list, isMove);
             }
         }
         catch (ex) {
