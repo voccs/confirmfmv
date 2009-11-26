@@ -29,6 +29,8 @@
     <!-- Front End Integration Hooks (used by Extension Manager)-->
     <em:description>Introduces a preference that allows users to be prompted before moving folders.</em:description>
     <em:creator>Ryan Lee (ryan@ryanlee.org)</em:creator>
+    <em:translator>Marcelo Ghelman (ghelman.net)</em:translator>
+    <em:translator>Edvard Borovskij</em:translator>
     <em:iconURL>chrome://confirmfmv/skin/icon32x32.png</em:iconURL>
     <em:homepageURL>http://ryanlee.org/software/mozilla/thunderbird/confirmfmv/</em:homepageURL>
     <em:optionsURL>chrome://confirmfmv/content/options.xul</em:optionsURL>
