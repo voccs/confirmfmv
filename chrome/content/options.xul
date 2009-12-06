@@ -1,58 +1,46 @@
 <?xml version="1.0"?>
-<!--
-   - Part of ConfirmFolderMove by Ryan Lee <ryan@ryanlee.org>
-   - Copyright (c) 2005-2007 Ryan Lee.
-   - See the license.txt included in this package for more information.
-   -->
 
 <?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
 <?xml-stylesheet href="chrome://confirmfmv/skin/options.css" type="text/css"?>
 
-<!DOCTYPE window SYSTEM "chrome://confirmfmv/locale/options.dtd">
+<!DOCTYPE prefwindow SYSTEM "chrome://confirmfmv/locale/options.dtd">
 
-<window id="confirmfmvOptionsWindow"
+<prefwindow id="confirmfmvOptionsWindow"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        type="prefwindow"
         windowtype="confirfmv:optionsWindow"
         title="&confirmfmvOptions.title;"
-        onload="ConfirmfmvOptions.onLoad(event);"
-        onunload="ConfirmfmvOptions.onUnload(event);">
+        height="160"
+        width="340">
 
-  <script type="application/x-javascript"
-          src="chrome://global/content/globalOverlay.js"/>
+  <prefpane id="confirmfmvOptionsPane"
+	    label="&confirmfmvOptions.title;">
 
-  <script type="application/x-javascript"
-          src="chrome://confirmfmv/content/options.js"/>
+    <script type="application/x-javascript"
+            src="chrome://global/content/globalOverlay.js"/>
+    <script type="application/x-javascript"
+            src="chrome://confirmfmv/content/options.js"/>
 
-  <commandset id="maincommands">
-    <command id="cmd_close" oncommand="window.close();"/>
-  </commandset>
+    <preferences>
+      <preference id="dragConfirm"
+		  name="extensions.confirmfmv.drag.confirm"
+		  type="bool" />
+      <preference id="dragDisableDialog"
+		  name="extensions.confirmfmv.drag.disableDialog"
+		  type="bool" />
+    </preferences>
 
-  <keyset id="mainkeys">
-    <key id="key_close" keycode="VK_ESCAPE" command="cmd_close"/>
-  </keyset>
-  <tabbox>
-    <tabs>
-      <tab id="optionsTab" label="&confirmfmvOptions.tab.label;"/>
-    </tabs>
-    <tabpanels id="confirmfmvOptions-tabPanel">
-      <vbox align="start">
-        <checkbox id="checkbox_confirmfmvSwitch"
-                  oncommand="ConfirmfmvOptions.setup();"
-                  preftype="bool"
-                  label="&confirmfmvOptions.pref.label;" />
-        <checkbox id="checkbox_confirmfmvDisableDialog"
-                  class="indent"
-                  preftype="bool"
-                  label="&confirmfmvOptions.pref_disable.label;" />
-      </vbox>
-    </tabpanels>
-  </tabbox>
+    <groupbox>
 
-  <!-- Buttons -->
-  <hbox class="il-pad">
-    <button id="button-save" label="&save;" oncommand="ConfirmfmvOptions.save();"/>
-    <spacer flex="1"/>
-    <button id="button-close" label="&close;" command="cmd_close"/>
-  </hbox>
+      <checkbox id="checkbox_confirmfmvSwitch"
+                oncommand="ConfirmfmvOptions.setup();"
+                preference="dragConfirm"
+                label="&confirmfmvOptions.pref.label;" />
+      <checkbox id="checkbox_confirmfmvDisableDialog"
+                class="indent"
+                preference="dragDisableDialog"
+                label="&confirmfmvOptions.pref_disable.label;" />
+    </groupbox>
+  </prefpane>
 
-</window>
+</prefwindow>

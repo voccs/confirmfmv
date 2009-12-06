@@ -1,3 +1,11 @@
-#confirmfmvOptionsWindow {
-  width: 36em;
+prefpane {
+    padding: 12px;
+}
+
+prefpane > vbox.content-box {
+    overflow: -moz-hidden-unscrollable;
+}
+
+prefwindow:not([type="child"]) {
+    padding: 0 !important;
 }
