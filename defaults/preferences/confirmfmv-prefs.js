@@ -1,2 +1,2 @@
-pref("folders.drag.confirm", true);
-pref("folders.drag.disable-dialog", false);
+pref("extensions.confirmfmv.drag.confirm", true);
+pref("extensions.confirmfmv.drag.disableDialog", false);

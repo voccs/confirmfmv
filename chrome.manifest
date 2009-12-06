@@ -6,4 +6,4 @@ locale	confirmfmv	pt-BR	jar:chrome/confirmfmv.jar!/locale/pt-BR/
 locale	confirmfmv	ru-RU	jar:chrome/confirmfmv.jar!/locale/ru-RU/
 
 overlay		chrome://messenger/content/messenger.xul	chrome://confirmfmv/content/overlay.xul
-override	chrome://messenger/content/messengerdnd.js	chrome://confirmfmv/content/messengerdnd.js
+
