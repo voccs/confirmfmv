@@ -2,5 +2,3 @@
 <!ENTITY confirmfmvOptions.tab.label "Preferências">
 <!ENTITY confirmfmvOptions.pref.label "Habilitar esta extensão (inibir se for fazer uma extensa reorganização de pastas)">
 <!ENTITY confirmfmvOptions.pref_disable.label "Desligar todos os diálogo de confirmação (sempre cancelar todos os movimentos de pastas)">
-<!ENTITY save "Salvar preferências">
-<!ENTITY close "Fechar">

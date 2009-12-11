@@ -2,6 +2,3 @@
 <!ENTITY confirmfmvOptions.tab.label "Preferences">
 <!ENTITY confirmfmvOptions.pref.label "Enable this extension (disable if extensive folder reorganizing is planned)">
 <!ENTITY confirmfmvOptions.pref_disable.label "Turn off all confirmation dialogs (always cancel every folder move)">
-
-<!ENTITY save "Save Preferences">
-<!ENTITY close "Close">

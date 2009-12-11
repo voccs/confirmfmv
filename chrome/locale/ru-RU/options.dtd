@@ -2,5 +2,3 @@
 <!ENTITY confirmfmvOptions.tab.label "Настройки">
 <!ENTITY confirmfmvOptions.pref.label "Включить это расширение (отключите, если планируется преобразование каталога с расширением)">
 <!ENTITY confirmfmvOptions.pref_disable.label "Отключить все запросы подтверждений (всегда отменять перемещение каждого каталога)">
-<!ENTITY save "Сохранить настройки">
-<!ENTITY close "Закрыть">

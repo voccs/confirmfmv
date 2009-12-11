@@ -1,0 +1,4 @@
+<!ENTITY confirmfmvOptions.title "Preferencias ConfirmFolderMove">
+<!ENTITY confirmfmvOptions.tab.label "Preferencias">
+<!ENTITY confirmfmvOptions.pref.label "Activar esta extensión (desactivar si se ha planeado un exhaustiva reorganización de carpetas)">
+<!ENTITY confirmfmvOptions.pref_disable.label "Desconectar todos los diálogos de confirmación (cancelar todos los movimientos de carpetas)">
