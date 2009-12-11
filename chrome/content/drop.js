@@ -17,7 +17,7 @@ gFolderTreeView.drop = function ftv_drop(aRow, aOrientation) {
 
       // get folder dragging pref
       let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
-      let confirmFolderDrag = prefs.getBoolPref("extensions.confirmfmv..drag.confirm");
+      let confirmFolderDrag = prefs.getBoolPref("extensions.confirmfmv.drag.confirm");
       let promptService = Components.classes["@mozilla.org/embedcomp/prompt-service;1"].getService(Components.interfaces.nsIPromptService);
       let disableDrag = prefs.getBoolPref("extensions.confirmfmv.drag.disableDialog");
       let confirmfmvBundle = document.getElementById("bundle_confirmfmv");
