@@ -1,0 +1,4 @@
+<!ENTITY confirmfmvOptions.title "Confirmar preferências do FolderMove">
+<!ENTITY confirmfmvOptions.tab.label "Preferências">
+<!ENTITY confirmfmvOptions.pref.label "Activar esta extensão (desactivar se estiver planeada uma organização das pastas)">
+<!ENTITY confirmfmvOptions.pref_disable.label "Desligar todos os diálogos de confirmação (cancelar sempre mudança da pasta)">
