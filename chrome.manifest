@@ -6,6 +6,7 @@ locale	confirmfmv	pt-BR	jar:chrome/confirmfmv.jar!/locale/pt-BR/
 locale	confirmfmv	ru-RU	jar:chrome/confirmfmv.jar!/locale/ru-RU/
 locale	confirmfmv	es-ES	jar:chrome/confirmfmv.jar!/locale/es-ES/
 locale	confirmfmv	pt-PT	jar:chrome/confirmfmv.jar!/locale/pt-PT/
+locale	confirmfmv	sr		jar:chrome/confirmfmv.jar!/locale/sr/
 
 overlay		chrome://messenger/content/messenger.xul	chrome://confirmfmv/content/overlay.xul
 

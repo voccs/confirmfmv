@@ -1,0 +1,4 @@
+<!ENTITY confirmfmvOptions.title "ConfirmFolderMove - опције">
+<!ENTITY confirmfmvOptions.tab.label "Опције">
+<!ENTITY confirmfmvOptions.pref.label "Омогући овај додатак (онемогућите га ако планирате поновно организовање фасцикли)">
+<!ENTITY confirmfmvOptions.pref_disable.label "Искључи све прозоре за потврђивање (увек откажи свако премештање фасцикле)">
