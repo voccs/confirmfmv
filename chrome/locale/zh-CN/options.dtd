@@ -1,0 +1,4 @@
+<!ENTITY confirmfmvOptions.title "ConfirmFolderMove 首选项">
+<!ENTITY confirmfmvOptions.tab.label "首选项">
+<!ENTITY confirmfmvOptions.pref.label "启用此扩展（如果打算进行大量文件夹重组时请禁用）">
+<!ENTITY confirmfmvOptions.pref_disable.label "关闭所有确认对话框（永远取消每个文件夹移动）">

@@ -1,0 +1,4 @@
+<!ENTITY confirmfmvOptions.title "Inställningar för ConfirmFolderMove">
+<!ENTITY confirmfmvOptions.tab.label "Inställningar">
+<!ENTITY confirmfmvOptions.pref.label "Aktivera detta tillägg (inaktivera om omfattande mappomorganisering planeras)">
+<!ENTITY confirmfmvOptions.pref_disable.label "Inaktivera alla bekräftelsedialoger (avbryt alltid mappflytt)">

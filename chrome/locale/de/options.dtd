@@ -1,4 +1,4 @@
-<!ENTITY confirmfmvOptions.title "ConfirmFolderMove Einstellungen">
+<!ENTITY confirmfmvOptions.title "ConfirmFolderMove - Einstellungen">
 <!ENTITY confirmfmvOptions.tab.label "Einstellungen">
-<!ENTITY confirmfmvOptions.pref.label "Diese Erweiterung aktivieren (Deaktivieren Sie dies, wenn eine größere Umorganisierung der Ordner geplant ist!)">
-<!ENTITY confirmfmvOptions.pref_disable.label "Keine Bestätigung anfordern (Das Verschieben wird immer abgebrochen)">
+<!ENTITY confirmfmvOptions.pref.label "Erweiterung aktiv (bei größerer Umorganisation deaktivieren)">
+<!ENTITY confirmfmvOptions.pref_disable.label "Verschieben von Ordnern vollständig deaktivieren (keine Nachfrage)">

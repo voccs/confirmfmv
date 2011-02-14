@@ -7,6 +7,7 @@
     <em:id>{c267db80-8a57-11da-a8d5-000a95be0946}</em:id>
     <em:name>ConfirmFolderMove</em:name>
     <em:version>1.1</em:version>
+    <em:type>2</em:type> <!-- type=extension -->
     
     <!-- Thunderbird -->
     <em:targetApplication>
@@ -17,15 +18,6 @@
       </Description>
     </em:targetApplication>
     
-    <!-- The contents of the extension //-->
-    <em:file>
-      <Description about="urn:mozilla:extension:file:confirmfmv.jar">
-        <em:package>content/confirmfmv/</em:package>
-	<em:locale>locale/en-US/confirmfmv/</em:locale>
-        <em:skin>skin/classic/confirmfmv/</em:skin>
-      </Description>
-    </em:file>
-
     <!-- Front End Integration Hooks (used by Extension Manager)-->
     <em:description>Introduces a preference that allows users to be prompted before moving folders.</em:description>
     <em:creator>Ryan Lee (ryan@ryanlee.org)</em:creator>
@@ -33,9 +25,12 @@
     <em:translator>Edvard Borovskij</em:translator>
     <em:translator>Carlos Simão</em:translator>
     <em:translator>ДакСРБИЈА</em:translator>
+    <em:translator>Luana Di Muzio - BabelZilla</em:translator>
+    <em:translator>Володимир Савчук Volodymyr Savchuk</em:translator>
+    <em:translator>yfdyh000 (yfdyh000@gmail.com)</em:translator>
+    <em:translator>Mikael Hiort af Ornäs</em:translator>
     <em:iconURL>chrome://confirmfmv/skin/icon32x32.png</em:iconURL>
     <em:homepageURL>http://ryanlee.org/software/mozilla/thunderbird/confirmfmv/</em:homepageURL>
     <em:optionsURL>chrome://confirmfmv/content/options.xul</em:optionsURL>
-    <em:type parseType="Integer">2</em:type> <!-- type=extension -->
   </Description>
 </RDF>

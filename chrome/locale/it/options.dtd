@@ -1,0 +1,4 @@
+<!ENTITY confirmfmvOptions.title "Opzioni di ConfirmFolderMove">
+<!ENTITY confirmfmvOptions.tab.label "Generali">
+<!ENTITY confirmfmvOptions.pref.label "Attiva l&apos;estensione (disattiva se è pianificata la compattazione delle cartelle)">
+<!ENTITY confirmfmvOptions.pref_disable.label "Annulla sempre ogni spostamento di cartelle (non mostrare alcuna finestra di conferma)">

@@ -1,0 +1,4 @@
+<!ENTITY confirmfmvOptions.title "Вподобання ConfirmFolderMove">
+<!ENTITY confirmfmvOptions.tab.label "Вподобання">
+<!ENTITY confirmfmvOptions.pref.label "Увімкнути це розширення (вимкнути якщо планується змінювати розгалужену теку)">
+<!ENTITY confirmfmvOptions.pref_disable.label "Вимкнути усі запити підтверджень (завжди скасовувати будь-яке переміщення тек)">
