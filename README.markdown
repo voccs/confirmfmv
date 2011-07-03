@@ -25,10 +25,10 @@ Mechanism
 ---------
 
 Inspection of the source should reveal that this patches one method usually
-found in chrome://messenger/content/folderPane.js, `gFolderTreeView.drop`.
+found in `chrome://messenger/content/folderPane.js`, `gFolderTreeView.drop`.
 
 If anybody can help me get this committed to the actual Thunderbird code
 base so the add-on is no longer necessary, please let me know.
 
-[1] https://addons.mozilla.org/thunderbird/addon/confirmfoldermove/
-[2] http://www.babelzilla.org/
+[1]: https://addons.mozilla.org/thunderbird/addon/confirmfoldermove/
+[2]: http://www.babelzilla.org/
