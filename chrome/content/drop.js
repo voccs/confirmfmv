@@ -91,7 +91,7 @@ gFolderTreeView.drop = function ftv_drop(aRow, aOrientation) {
     else if (Array.indexOf(types, "application/x-moz-file") != -1) {
       for (let i = 0; i < count; i++) {
         let extFile = dt.mozGetDataAt("application/x-moz-file", i)
-                        .QueryInterface(Ci.nsILocalFile);
+                        .QueryInterface(Ci.nsIFile);
         if (extFile.isFile()) {
           let len = extFile.leafName.length;
           if (len > 4 && extFile.leafName.substr(len - 4).toLowerCase() == ".eml")
