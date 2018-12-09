@@ -6,7 +6,7 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>{c267db80-8a57-11da-a8d5-000a95be0946}</em:id>
     <em:name>ConfirmFolderMove</em:name>
-    <em:version>1.1.2.1</em:version>
+    <em:version>1.1.3</em:version>
     <em:type>2</em:type> <!-- type=extension -->
     
     <!-- Thunderbird -->
@@ -21,6 +21,7 @@
     <!-- Front End Integration Hooks (used by Extension Manager)-->
     <em:description>Introduces a preference that allows users to be prompted before moving folders.</em:description>
     <em:creator>Ryan Lee (ryan@ryanlee.org)</em:creator>
+    <em:contributor>Manuel Rüger (https://github.com/mrueg)</em:contributor>
     <em:translator>Marcelo Ghelman (ghelman.net)</em:translator>
     <em:translator>Edvard Borovskij</em:translator>
     <em:translator>Carlos Simão</em:translator>
