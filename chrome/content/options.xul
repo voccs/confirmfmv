@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <?xml-stylesheet href="chrome://messenger/skin/preferences/preferences.css" type="text/css"?>
 <?xml-stylesheet href="chrome://confirmfmv/skin/options.css" type="text/css"?>
 
@@ -10,8 +11,8 @@
         type="prefwindow"
         windowtype="confirfmv:optionsWindow"
         title="&confirmfmvOptions.title;"
-        height="200"
-        width="340">
+        height="180"
+        width="400">
 
   <prefpane id="confirmfmvOptionsPane"
 	    label="&confirmfmvOptions.tab.label;">
@@ -31,15 +32,16 @@
     </preferences>
 
     <groupbox>
-
-      <checkbox id="checkbox_confirmfmvSwitch"
-                oncommand="ConfirmfmvOptions.setup();"
-                preference="dragConfirm"
-                label="&confirmfmvOptions.pref.label;" />
-      <checkbox id="checkbox_confirmfmvDisableDialog"
-                class="indent"
-                preference="dragDisableDialog"
-                label="&confirmfmvOptions.pref_disable.label;" />
+      <vbox align="start">
+        <checkbox id="checkbox_confirmfmvSwitch"
+                  oncommand="ConfirmfmvOptions.setup();"
+                  preference="dragConfirm"
+                  label="&confirmfmvOptions.pref.label;" />
+        <checkbox id="checkbox_confirmfmvDisableDialog"
+                  class="indent"
+                  preference="dragDisableDialog"
+                  label="&confirmfmvOptions.pref_disable.label;" />
+      </vbox>
     </groupbox>
   </prefpane>
 
