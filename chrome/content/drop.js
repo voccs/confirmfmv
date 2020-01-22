@@ -8,8 +8,10 @@ gFolderTreeView.drop = function ftv_drop(aRow, aOrientation) {
 
   // This is a potential rss feed.  A link image as well as link text url
   // should be handled; try to extract a url from non moz apps as well.
-  let feedUri = targetFolder.server.type == "rss" && count == 1 ?
-                  FeedUtils.getFeedUriFromDataTransfer(dt) : null;
+  let feedUri =
+    targetFolder.server.type == "rss" && count == 1
+      ? FeedUtils.getFeedUriFromDataTransfer(dt)
+      : null;
 
   // we only support drag of a single flavor at a time.
   let types = Array.from(dt.mozTypesAt(0));
@@ -37,28 +39,36 @@ gFolderTreeView.drop = function ftv_drop(aRow, aOrientation) {
     // END CHANGES
 
     for (let i = 0; i < count; i++) {
-      let folders = new Array;
-      folders.push(dt.mozGetDataAt("text/x-moz-folder", i)
-                     .QueryInterface(Ci.nsIMsgFolder));
+      let folders = [];
+      folders.push(
+        dt
+          .mozGetDataAt("text/x-moz-folder", i)
+          .QueryInterface(Ci.nsIMsgFolder)
+      );
       let array = toXPCOMArray(folders, Ci.nsIMutableArray);
-      cs.CopyFolders(array, targetFolder,
-                    (folders[0].server == targetFolder.server), null,
-                     msgWindow);
+      cs.CopyFolders(
+        array,
+        targetFolder,
+        folders[0].server == targetFolder.server,
+        null,
+        msgWindow
+      );
     }
-  }
-  else if (types.includes("text/x-moz-newsfolder")) {
+  } else if (types.includes("text/x-moz-newsfolder")) {
     // Start by getting folders into order.
-    let folders = new Array;
+    let folders = [];
     for (let i = 0; i < count; i++) {
-      let folder = dt.mozGetDataAt("text/x-moz-newsfolder", i)
-                     .QueryInterface(Ci.nsIMsgFolder);
+      let folder = dt
+        .mozGetDataAt("text/x-moz-newsfolder", i)
+        .QueryInterface(Ci.nsIMsgFolder);
       folders[this.getIndexOfFolder(folder)] = folder;
     }
-    let newsFolder = targetFolder.rootFolder
-                                 .QueryInterface(Ci.nsIMsgNewsFolder);
+    let newsFolder = targetFolder.rootFolder.QueryInterface(
+      Ci.nsIMsgNewsFolder
+    );
     // When moving down, want to insert first one last.
     // When moving up, want to insert first one first.
-    let i = (aOrientation == 1) ? folders.length - 1 : 0;
+    let i = aOrientation == 1 ? folders.length - 1 : 0;
     while (i >= 0 && i < folders.length) {
       let folder = folders[i];
       if (folder) {
@@ -67,45 +77,67 @@ gFolderTreeView.drop = function ftv_drop(aRow, aOrientation) {
       }
       i -= aOrientation;
     }
-  }
-  else if (types.includes("text/x-moz-message")) {
-    let array = Cc["@mozilla.org/array;1"]
-                  .createInstance(Ci.nsIMutableArray);
+  } else if (types.includes("text/x-moz-message")) {
+    let array = Cc["@mozilla.org/array;1"].createInstance(Ci.nsIMutableArray);
     let sourceFolder;
-    let messenger = Cc["@mozilla.org/messenger;1"].createInstance(Ci.nsIMessenger);
+    let messenger = Cc["@mozilla.org/messenger;1"].createInstance(
+      Ci.nsIMessenger
+    );
     for (let i = 0; i < count; i++) {
-      let msgHdr = messenger.msgHdrFromURI(dt.mozGetDataAt("text/x-moz-message", i));
-      if (!i)
+      let msgHdr = messenger.msgHdrFromURI(
+        dt.mozGetDataAt("text/x-moz-message", i)
+      );
+      if (!i) {
         sourceFolder = msgHdr.folder;
+      }
       array.appendElement(msgHdr);
     }
     let prefBranch = Services.prefs.getBranch("mail.");
-    let isMove = Cc["@mozilla.org/widget/dragservice;1"]
-                    .getService(Ci.nsIDragService).getCurrentSession()
-                    .dragAction == Ci.nsIDragService.DRAGDROP_ACTION_MOVE;
-    if (!sourceFolder.canDeleteMessages)
+    let isMove =
+      Cc["@mozilla.org/widget/dragservice;1"]
+        .getService(Ci.nsIDragService)
+        .getCurrentSession().dragAction ==
+      Ci.nsIDragService.DRAGDROP_ACTION_MOVE;
+    if (!sourceFolder.canDeleteMessages) {
       isMove = false;
+    }
 
     prefBranch.setCharPref("last_msg_movecopy_target_uri", targetFolder.URI);
     prefBranch.setBoolPref("last_msg_movecopy_was_move", isMove);
     // ### ugh, so this won't work with cross-folder views. We would
     // really need to partition the messages by folder.
-    cs.CopyMessages(sourceFolder, array, targetFolder, isMove, null,
-                      msgWindow, true);
-  }
-  else if (feedUri) {
+    cs.CopyMessages(
+      sourceFolder,
+      array,
+      targetFolder,
+      isMove,
+      null,
+      msgWindow,
+      true
+    );
+  } else if (feedUri) {
     Cc["@mozilla.org/newsblog-feed-downloader;1"]
-       .getService(Ci.nsINewsBlogFeedDownloader)
-       .subscribeToFeed(feedUri.spec, targetFolder, msgWindow);
-  }
-  else if (types.includes("application/x-moz-file")) {
+      .getService(Ci.nsINewsBlogFeedDownloader)
+      .subscribeToFeed(feedUri.spec, targetFolder, msgWindow);
+  } else if (types.includes("application/x-moz-file")) {
     for (let i = 0; i < count; i++) {
-      let extFile = dt.mozGetDataAt("application/x-moz-file", i)
-                      .QueryInterface(Ci.nsIFile);
+      let extFile = dt
+        .mozGetDataAt("application/x-moz-file", i)
+        .QueryInterface(Ci.nsIFile);
       if (extFile.isFile()) {
         let len = extFile.leafName.length;
-        if (len > 4 && extFile.leafName.toLowerCase().endsWith(".eml"))
-          cs.CopyFileMessage(extFile, targetFolder, null, false, 1, "", null, msgWindow);
+        if (len > 4 && extFile.leafName.toLowerCase().endsWith(".eml")) {
+          cs.CopyFileMessage(
+            extFile,
+            targetFolder,
+            null,
+            false,
+            1,
+            "",
+            null,
+            msgWindow
+          );
+        }
       }
     }
   }
