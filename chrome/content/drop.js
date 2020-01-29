@@ -24,7 +24,7 @@ window.gFolderTreeView.drop = function ftv_drop(aRow, aOrientation) {
     let cfmPref = Services.prefs.getBranch("extensions.confirmfmv.drag.");
     let confirmFolderDrag = cfmPref.getBoolPref("confirm");
     let disableDrag = cfmPref.getBoolPref("disableDialog");
-    let cfmBundle = Services.strings.createBundle("chrome://confirmfmv/locales/confirmfmv.properties")
+    let cfmBundle = Services.strings.createBundle("chrome://confirmfmv/locale/confirmfmv.properties")
     let title = cfmBundle.GetStringFromName("confirmMoveFolderTitle");
     let text = cfmBundle.formatStringFromName("confirmMoveFolderText", [
       dt
