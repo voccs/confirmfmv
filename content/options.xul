@@ -2,47 +2,33 @@
 
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <?xml-stylesheet href="chrome://messenger/skin/preferences/preferences.css" type="text/css"?>
-<?xml-stylesheet href="chrome://confirmfmv/skin/options.css" type="text/css"?>
+<?xml-stylesheet href="chrome://messenger/skin/messenger.css" type="text/css"?>
 
-<!DOCTYPE prefwindow SYSTEM "chrome://confirmfmv/locale/options.dtd">
+<!DOCTYPE dialog SYSTEM "chrome://confirmfmv/locale/options.dtd">
 
-<prefwindow id="confirmfmvOptionsWindow"
-        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-        type="prefwindow"
-        windowtype="confirfmv:optionsWindow"
-        title="&confirmfmvOptions.title;"
-        height="180"
-        width="400">
+<dialog id="confirmfmvOptionsWindow"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-  <prefpane id="confirmfmvOptionsPane"
-	    label="&confirmfmvOptions.tab.label;">
-
-    <script type="application/x-javascript"
-            src="chrome://global/content/globalOverlay.js"/>
-    <script type="application/x-javascript"
-            src="chrome://confirmfmv/content/options.js"/>
-
-    <preferences>
-      <preference id="dragConfirm"
-		  name="extensions.confirmfmv.drag.confirm"
-		  type="bool" />
-      <preference id="dragDisableDialog"
-		  name="extensions.confirmfmv.drag.disableDialog"
-		  type="bool" />
-    </preferences>
-
+  <vbox>
     <groupbox>
       <vbox align="start">
         <checkbox id="checkbox_confirmfmvSwitch"
                   oncommand="ConfirmfmvOptions.setup();"
-                  preference="dragConfirm"
+                  preference="extensions.confirmfmv.drag.confirm"
                   label="&confirmfmvOptions.pref.label;" />
         <checkbox id="checkbox_confirmfmvDisableDialog"
                   class="indent"
-                  preference="dragDisableDialog"
+                  preference="extensions.confirmfmv.drag.disableDialog"
                   label="&confirmfmvOptions.pref_disable.label;" />
       </vbox>
     </groupbox>
-  </prefpane>
+  </vbox>
 
-</prefwindow>
+  <script type="application/javascript"
+          src="chrome://global/content/globalOverlay.js"/>
+  <script type="application/javascript"
+          src="chrome://global/content/preferencesBindings.js"/>
+  <script type="application/javascript"
+          src="chrome://confirmfmv/content/options.js"/>
+
+</dialog>
