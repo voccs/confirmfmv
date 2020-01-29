@@ -1,6 +1,6 @@
 // This is cribbed from comm/mail/base/content/folderPane.js
-gFolderTreeView.drop = function ftv_drop(aRow, aOrientation) {
-  let targetFolder = gFolderTreeView._rowMap[aRow]._folder;
+window.gFolderTreeView.drop = function ftv_drop(aRow, aOrientation) {
+  let targetFolder = window.gFolderTreeView._rowMap[aRow]._folder;
 
   let dt = this._currentTransfer;
   let count = dt.mozItemCount;
@@ -24,12 +24,13 @@ gFolderTreeView.drop = function ftv_drop(aRow, aOrientation) {
     let cfmPref = Services.prefs.getBranch("extensions.confirmfmv.drag.");
     let confirmFolderDrag = cfmPref.getBoolPref("confirm");
     let disableDrag = cfmPref.getBoolPref("disableDialog");
-    let title = browser.i18n.getMessage("confirmMoveFolderTitle");
-    let text = browser.i18n.getMessage("confirmMoveFolderText",
+    let cfmBundle = Services.strings.createBundle("chrome://confirmfmv/locales/confirmfmv.properties")
+    let title = cfmBundle.GetStringFromName("confirmMoveFolderTitle");
+    let text = cfmBundle.formatStringFromName("confirmMoveFolderText", [
       dt
         .mozGetDataAt("text/x-moz-folder", 0)
         .QueryInterface(Ci.nsIMsgFolder).name
-    );
+    ], 1);
     if (confirmFolderDrag && disableDrag)
       return false;
 
