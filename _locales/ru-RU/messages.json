@@ -1,8 +1,0 @@
-{
-  "confirmMoveFolderTitle": {
-    "message": "Переместить каталог"
-  },
-  "confirmMoveFolderText": {
-    "message": "Вы действительно хотите переместить каталог $1 ?"
-  }
-}
