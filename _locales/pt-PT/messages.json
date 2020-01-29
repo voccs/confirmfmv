@@ -1,0 +1,8 @@
+{
+  "confirmMoveFolderTitle": {
+    "message": "Mover pasta"
+  },
+  "confirmMoveFolderText": {
+    "message": "Tem a certeza que deseja mover a pasta $1?"
+  }
+}

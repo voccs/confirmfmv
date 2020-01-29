@@ -1,0 +1,16 @@
+{
+  "extensionName": {
+    "message": "ConfirmFolderMove"
+  },
+  "extensionDescription": {
+    "message": "Introduces a preference that allows users to be prompted before moving folders."
+  },
+  "confirmMoveFolderTitle": {
+    "message": "Move Folder",
+    "description": "Confirmation dialog window title"
+  },
+  "confirmMoveFolderText": {
+    "message": "Are you sure you want to move the $1 folder?",
+    "description": "Question the dialog window asks, confirming means move the folder"
+  }
+}

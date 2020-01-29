@@ -1,0 +1,8 @@
+{
+  "confirmMoveFolderTitle": {
+    "message": "Переміщення теки"
+  },
+  "confirmMoveFolderText": {
+    "message": "Ви впевнені, що бажаєте перемістити теку $1 ?"
+  }
+}

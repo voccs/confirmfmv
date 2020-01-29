@@ -1,0 +1,8 @@
+{
+  "confirmMoveFolderTitle": {
+    "message": "Ordner verschieben"
+  },
+  "confirmMoveFolderText": {
+    "message": "Möchten Sie den Ordner %S wirklich verschieben?"
+  }
+}

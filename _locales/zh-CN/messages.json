@@ -1,0 +1,8 @@
+{
+  "confirmMoveFolderTitle": {
+    "message": "移动文件夹"
+  },
+  "confirmMoveFolderText": {
+    "message": "您确定您要移动 $1 文件夹吗？"
+  }
+}

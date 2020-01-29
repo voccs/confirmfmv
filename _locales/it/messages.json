@@ -1,0 +1,8 @@
+{
+  "confirmMoveFolderTitle": {
+    "message": "Spostamento della cartella"
+  },
+  "confirmMoveFolderText": {
+    "message": "Spostare la cartella chiamata $1?"
+  }
+}
