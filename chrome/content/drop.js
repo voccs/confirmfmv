@@ -21,18 +21,23 @@ gFolderTreeView.drop = function ftv_drop(aRow, aOrientation) {
     // somebody wanted to do.  So ASK FIRST.
 
     // get folder dragging pref
-    let confirmFolderDrag = Services.prefs.getBoolPref("extensions.confirmfmv.drag.confirm");
-    let promptService = Cc["@mozilla.org/embedcomp/prompt-service;1"]
-                           .getService(Ci.nsIPromptService);
-    let disableDrag = Services.prefs.getBoolPref("extensions.confirmfmv.drag.disableDialog");
-    let confirmfmvBundle = document.getElementById("bundle_confirmfmv");
-    let title = confirmfmvBundle.getString("confirmMoveFolderTitle");
-    let text = confirmfmvBundle.getFormattedString("confirmMoveFolderText", [dt.mozGetDataAt("text/x-moz-folder", 0).QueryInterface(Ci.nsIMsgFolder).name]);
+    let cfmPref = Services.prefs.getBranch("extensions.confirmfmv.drag.");
+    let confirmFolderDrag = cfmPref.getBoolPref("confirm");
+    let disableDrag = cfmPref.getBoolPref("disableDialog");
+    let title = browser.i18n.getMessage("confirmMoveFolderTitle");
+    let text = browser.i18n.getMessage("confirmMoveFolderText",
+      dt
+        .mozGetDataAt("text/x-moz-folder", 0)
+        .QueryInterface(Ci.nsIMsgFolder).name
+    );
     if (confirmFolderDrag && disableDrag)
       return false;
 
     // if the user says no, then just fall out
     if (confirmFolderDrag) {
+      let promptService =
+        Cc["@mozilla.org/embedcomp/prompt-service;1"]
+          .getService(Ci.nsIPromptService);
       if (!promptService.confirm(window, title, text))
         return false;
     }
