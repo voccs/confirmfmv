@@ -1,14 +1,12 @@
 all: confirmfmv.xpi
 
 confirmfmv.xpi:
-	make -f Makefile.chrome -C chrome confirmfmv.jar
 	rm -f $@
-	zip $@ chrome/confirmfmv.jar manifest.json license.txt chrome.manifest defaults/preferences/confirmfmv-prefs.js _locales/**/*
+	zip $@ content/* skin/* locale/**/* manifest.json license.txt chrome.manifest defaults/preferences/confirmfmv-prefs.js _locales/**/*
 
 babelzilla:
-	make -f Makefile.chrome -C chrome babelzilla
 	rm -rf confirmfmv.xpi
-	zip confirmfmv.xpi chrome/confirmfmv.jar manifest.json license.txt chrome.manifest defaults/preferences/confirmfmv-prefs.js _locales/**/*
+	zip confirmfmv.xpi content/* skin/* locale/**/* manifest.json license.txt chrome.manifest defaults/preferences/confirmfmv-prefs.js _locales/**/*
 
 # This is going to be more complex, comment out for now.
 #localize:
@@ -18,4 +16,4 @@ babelzilla:
 #	rm -rf chrome/locale/locales.tar.gz
 
 clean:
-	rm -f chrome/confirmfmv.jar confirmfmv.xpi
+	rm -f confirmfmv.xpi

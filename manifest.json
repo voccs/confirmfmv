@@ -14,7 +14,7 @@
   "legacy": {
     "type": "xul",
     "options": {
-      "page": "chrome://confirmfmv/content/options.xul",
+      "page": "content/options.xul",
       "open_in_tab": true
     }
   },
