@@ -6,9 +6,4 @@
   <script type="application/x-javascript"
           src="chrome://confirmfmv/content/drop.js" />
 
-  <stringbundleset id="stringbundleset">
-    <stringbundle id="bundle_confirmfmv"
-                  src="chrome://confirmfmv/locale/confirmfmv.properties" />
-  </stringbundleset>
-
 </overlay>
