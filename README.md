@@ -45,10 +45,11 @@ Migration
 ---------
 
 * [x] Finish moving whatever can be moved to _locales messages.json files.
-* [ ] Figure out whether former stringbundle properties can be folded correctly into _locale messages.json with browser.i18n - yes. Convert to this.
-* [ ] Figure out how to overlay since that seems to be absent from chrome.manifest now.
-* [ ] Figure out where to put default preference values.
+* [x] Figure out whether former stringbundle properties can be folded correctly into _locale messages.json with browser.i18n - yes. Convert to this.
+* [x] Figure out how to overlay since that seems to be absent from chrome.manifest now - nope, the old system no longer recognizes it, but the new overlay loader converts them to something it will use.
+* [x] Apparently nope, break the properties back out of the messages.json and just ditch most of the _locales.  The bit we're overriding doesn't make use of browser.i18n and has to use string bundles loaded from the chrome URL.
+* [?] Figure out where to put default preference values.  Leave them where they are, I think.
+* [x] Make sure the build builds properly (see whatever path folderflags took to get there).
+* [x] Test it out in TB68.
+* [ ] Make sure the options panel works correctly, adapt if not.  It doesn't register, unclear what's going on.  Maybe bad XUL.
 * [ ] Redo CSS styles.
-* [ ] Make sure the build builds properly (see whatever path folderflags took to get there).
-* [ ] Test it out in TB68.
-* [ ] Make sure the options panel works correctly, adapt if not.
